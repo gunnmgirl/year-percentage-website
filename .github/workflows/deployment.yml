@@ -24,4 +24,4 @@ jobs:
         run: npm install -g surge
 
       - name: Deploy to surge
-        run: surge ./out year-percentage.surge.sh --token ${{secrets.SURGE_TOKEN}}
+        run: surge ./build year-percentage.surge.sh --token ${{secrets.SURGE_TOKEN}}
