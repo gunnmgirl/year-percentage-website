@@ -1,6 +1,7 @@
 import React from "react";
 import { getDaysInYear, getDayOfYear, getYear, getQuarter } from "date-fns";
 import { Flex, Box, Text, Progress } from "@chakra-ui/react";
+import Theme from "./theme";
 
 const today = new Date();
 
@@ -32,27 +33,35 @@ const App = () => {
   const colorScheme = getProgressColor();
 
   return (
-    <Flex minHeight="100vh" justify="center" align="center">
-      <Box textAlign="center">
-        <Text color="gray.900" fontStyle="oblique" fontSize="lg" mb="8px">
-          "The two most powerful warriors are patience and time."
-        </Text>
-        <Text fontSize="md" mb="42px">
-          Leo Tolstoy, War and Peace
-        </Text>
-        <Progress
-          colorScheme={colorScheme}
-          value={yearPercentage}
-          hasStripe
-          isAnimated
-          max={100}
-        />
-        <Text
-          mt="8px"
-          fontSize="sm"
-          fontWeight="bold"
-        >{`${yearPercentage}% of ${currentYear}.`}</Text>
-      </Box>
+    <Flex minHeight="100vh" justify="center">
+      <Flex
+        direction="column"
+        minHeight="100vh"
+        justify="space-evenly"
+        align="center"
+      >
+        <Theme colorScheme={colorScheme} />
+        <Box textAlign="center">
+          <Text fontStyle="oblique" fontSize="lg" mb="8px">
+            "The two most powerful warriors are patience and time."
+          </Text>
+          <Text fontSize="md" mb="42px">
+            Leo Tolstoy, War and Peace
+          </Text>
+          <Progress
+            colorScheme={colorScheme}
+            value={yearPercentage}
+            hasStripe
+            isAnimated
+            max={100}
+          />
+          <Text
+            mt="8px"
+            fontSize="sm"
+            fontWeight="bold"
+          >{`${yearPercentage}% of ${currentYear}.`}</Text>
+        </Box>
+      </Flex>
     </Flex>
   );
 };
