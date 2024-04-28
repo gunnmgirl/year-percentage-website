@@ -5,13 +5,13 @@ import Theme from "./theme";
 
 const today = new Date();
 
-const getYearPercentage = () => {
+const getYearPercentage = (): number => {
   const daysInYear = getDaysInYear(today);
   const curretDayOfYear = getDayOfYear(today);
   return Math.round((100 * curretDayOfYear) / daysInYear);
 };
 
-const getProgressColor = () => {
+const getProgressColor = (): string => {
   const yearQuarter = getQuarter(today);
   switch (yearQuarter) {
     case 1:
@@ -29,7 +29,7 @@ const getProgressColor = () => {
 
 const App = () => {
   const yearPercentage = getYearPercentage();
-  const currentYear = getYear(today);
+  const currentYear: number = getYear(today);
   const colorScheme = getProgressColor();
 
   return (
