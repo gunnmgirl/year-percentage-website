@@ -4,7 +4,7 @@ import { Box, Flex, Switch, useColorMode } from "@chakra-ui/react";
 import { ReactComponent as Sun } from "./theme.svg";
 import { ReactComponent as Moon } from "./moon.svg";
 
-const Theme = (props) => {
+const Theme = (props: { colorScheme: string }) => {
   const { toggleColorMode, colorMode } = useColorMode();
   const { colorScheme } = props;
 
