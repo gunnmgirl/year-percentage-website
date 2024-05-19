@@ -33,7 +33,7 @@ const App = () => {
   const colorScheme = getProgressColor();
 
   return (
-    <Flex minHeight="100vh" justify="center">
+    <Flex minHeight="100vh" justify="center" paddingX="16px">
       <Flex
         direction="column"
         minHeight="100vh"
